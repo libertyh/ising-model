@@ -169,5 +169,5 @@ function [Jnew_all, zeronodes, modelname] = select_zero_nodes(model, Js, Jn)
     
     % set the coupling matrix to zero at the appropriate nodes
     Jnew_all(zeronodes) = 0;
-    imagesc(Jnew_all);
+    %imagesc(Jnew_all);
 end
