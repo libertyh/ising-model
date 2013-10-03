@@ -83,6 +83,7 @@ function [logL, dlogL] = L_dL_ising( J, X, nneurons, nstims, zeronodes )
    
     % pre-allocate some matrix multiplications we'll need later
     Xsum = sum(X_all.*(Jn*X_all));
+
     % step through all the possible stimulus conditions
     for si=1:size(soundcond,2)
         St = soundcond(:,si);
@@ -92,7 +93,7 @@ function [logL, dlogL] = L_dL_ising( J, X, nneurons, nstims, zeronodes )
         % don't bother calculating logZ if we won't use it anywhere
         if length(matching_inds)>0
             % get the energy for all possible states for this light and sound condition
-            E_all = sum(X_all.*(Jn*X_all)) + St(:)'*(Js'*X_all);
+            E_all = Xsum + St(:)'*(Js'*X_all);
 
             potential_all = exp( -E_all ); % caclulate the potential function for all patterns    
             Z = sum( potential_all ); % calculate the partition function
@@ -108,10 +109,7 @@ function [logL, dlogL] = L_dL_ising( J, X, nneurons, nstims, zeronodes )
             dJn = dJn - Xnmatch*Xnmatch' + length(matching_inds)/Z * bsxfun( @times, X_all, potential_all ) * X_all';
             % sound to neuron gradient
             dJs = dJs - Xnmatch*Smatch' + length(matching_inds)/Z * (X_all * potential_all(:)) * St';
-
-            % we could compute many of the matrix multiplications above outside this loop, or only once in the loop, and make it go faster
         end
-
     end    
     
     logL = logL / Treal; % average log likelihood
