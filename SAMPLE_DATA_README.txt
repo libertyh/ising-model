@@ -2,9 +2,11 @@
 -  SAMPLE DATA READ ME                                           -
 ------------------------------------------------------------------
 Reference:
+ Hamilton LS, Sohl-Dickstein J, Huth AG, Carels VM, Bao S (2013). Optogenetic
+        Activation of an Inhibitory Network Enhances Functional Connectivity in
+        Auditory Cortex.  Neuron (in press).
 
-
-Sample data here are from recordings taken from the mouse
+Sample data here are from recordings taken from adult mouse
 auditory cortex with a NeuroNexus A4x4 polytrode. The approximate
 depths of rows 1, 2, 3, and 4 are 200, 300, 400, and 500 um below
 the pial surface, respectively.
