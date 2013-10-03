@@ -25,7 +25,7 @@ function [all_J, all_logL, modelname] = ising_neurons_L1reg(datafile, model, nch
 %       model = 0;
 %       nchunks = 10; 
 %       [all_J, all_logL, modelname] = ISING_NEURONS_L1REG(datafile, model, nchunks);
-%       imagesc(-all_J(:,:,1), [-2 2]); % plot coupling from 1st cross validation iteration
+%       imagesc(all_J(:,:,1), [-2 2]); % plot coupling from 1st cross validation iteration
 %
 %  See also SELECT_ZERO_NODES, K_DK_ISING_L1REG
 %
