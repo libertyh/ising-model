@@ -4,6 +4,37 @@ Fitting Ising Models to Neural Data
 by Liberty Hamilton and Jascha Sohl-Dickstein
 Oct. 2013
 
+Licensing Info
+--------------
+ Copyright ©2013 Liberty S. Hamilton and Jascha Sohl-Dickstein. The Regents 
+ of the University of California (Regents).  All Rights Reserved.  Permission
+ to use, copy, modify, and distribute this software and its documentation for
+ educational, research, and not-for-profit purposes, without fee and without a 
+ signed licensing agreement, is hereby granted, provided that the above 
+ copyright notice, this paragraph and the following two paragraphs appear in 
+ all copies, modifications, and distributions.  Contact
+  The Office of Technology Licensing, UC Berkeley,
+  2150 Shattuck Avenue, Suite 510, 
+  Berkeley, CA 94720-1620,
+  (510) 643-7201,
+ for commercial licensing opportunities.
+
+ Created by Liberty S. Hamilton and Jascha Sohl-Dickstein, University of California, Berkeley.
+ Based on code written by Jascha Sohl-Dickstein (2009) available at 
+ https://github.com/Sohl-Dickstein/Minimum-Probability-Flow-Learning 
+
+ IN NO EVENT SHALL REGENTS BE LIABLE TO ANY PARTY FOR DIRECT, INDIRECT,
+ SPECIAL, INCIDENTAL, OR CONSEQUENTIAL DAMAGES, INCLUDING LOST PROFITS,
+ ARISING OUT OF THE USE OF THIS SOFTWARE AND ITS DOCUMENTATION, EVEN
+ IF REGENTS HAS BEEN ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+
+ REGENTS SPECIFICALLY DISCLAIMS ANY WARRANTIES, INCLUDING, BUT NOT
+ LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS
+ FOR A PARTICULAR PURPOSE. THE SOFTWARE AND ACCOMPANYING DOCUMENTATION,
+ IF ANY, PROVIDED HEREUNDER IS PROVIDED "AS IS". REGENTS HAS NO OBLIGATION
+ TO PROVIDE MAINTENANCE, SUPPORT, UPDATES, ENHANCEMENTS, OR MODIFICATIONS.
+
+
 Overview
 --------
 This document explains how to use our MATLAB code (available at: [https://github.com/libertyh/ising-model](https://github.com/libertyh/ising-model) to fit Ising Models to neural data.  We have used this technique in our recent paper (Hamilton et al. 2013) to investigate changes in functional connectivity as measured by Ising Model couplings. The Ising Model couplings are fitted using Minimum Probability Flow learning (Sohl-Dickstein et al. 2011). The code is modified from code available at [https://github.com/Sohl-Dickstein/Minimum-Probability-Flow-Learning](https://github.com/Sohl-Dickstein/Minimum-Probability-Flow-Learning).  To run the code on an example dataset (`sample_data.mat`), run the MATLAB file `run_ising_demo.m`.
