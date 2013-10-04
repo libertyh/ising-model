@@ -1,12 +1,12 @@
 Fitting Ising Models to Neural Data
 ===================================
 
-by Liberty Hamilton and Jascha Sohl-Dickstein
+by Liberty Hamilton, Jascha Sohl-Dickstein, and Alexander Huth
 Oct. 2013
 
 Licensing Info
 --------------
- Copyright ©2013 Liberty S. Hamilton and Jascha Sohl-Dickstein. The Regents 
+ Copyright ©2013 [see note below]. The Regents 
  of the University of California (Regents).  All Rights Reserved.  Permission
  to use, copy, modify, and distribute this software and its documentation for
  educational, research, and not-for-profit purposes, without fee and without a 
@@ -19,9 +19,10 @@ Licensing Info
   (510) 643-7201,
  for commercial licensing opportunities.
 
- Created by Liberty S. Hamilton and Jascha Sohl-Dickstein, University of California, Berkeley.
+ [Created by Liberty S. Hamilton, Jascha Sohl-Dickstein, and Alexander Huth
+ at the University of California, Berkeley.
  Based on code written by Jascha Sohl-Dickstein (2009) available at 
- https://github.com/Sohl-Dickstein/Minimum-Probability-Flow-Learning 
+ https://github.com/Sohl-Dickstein/Minimum-Probability-Flow-Learning]
 
  IN NO EVENT SHALL REGENTS BE LIABLE TO ANY PARTY FOR DIRECT, INDIRECT,
  SPECIAL, INCIDENTAL, OR CONSEQUENTIAL DAMAGES, INCLUDING LOST PROFITS,
