@@ -49,7 +49,7 @@ To use this code, you will need your data preprocessed in the correct format. We
 - Save your data as a `.mat` file with the variables `spk` (for the `n x t` binned spike matrix), `stim` (for the `s x t` binned stimulus condition matrix), and `bin_size` as the bin size in milliseconds (for our sample data the bin size is 5 ms, so `bin_size = 0.05`.
 
 ## Re-ordering the channels
-By reordering your channel numbers you will make the plotting easier for yourself later (especially if you are interested in spatial relationships in the couplings). For NeuroNexus probes (used in our study), the channel order on the polytrode is not sequential, so we re-order the channels so that they are relabeled as shown below.
+By reordering your channel numbers you will make the plotting easier for yourself later (especially if you are interested in spatial relationships in the couplings). For NeuroNexus probes (used in our study, [see p6 of the A16 map document](http://www.neuronexustech.com/images/Electrode%20Site%20Map/A16%20Maps.pdf), the channel order on the polytrode is not sequential, so we re-order the channels so that they are relabeled as shown below.
 
 ![Example channel reordering for NeuroNexus A4x4 probe](https://raw.github.com/libertyh/ising-model/master/images/ChannelOrder.png "Optional title")
 Example site map for a NeuroNexus A16 probe (left), and corresponding reordering before running the Ising Model (right).
