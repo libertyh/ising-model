@@ -120,6 +120,24 @@ function [all_J, all_logL, modelname] = ising_neurons_L1reg(datafile, model, nch
         chunk_inds{ii} = smat(:);
     end
 
+    % set options for minFunc function minimization
+    T = nneurons+nstims; % number of couplings to fit
+    nsamples = size(X_train,2); % number of training samples
+    maxlinesearch = 1000; % this number is excessive just to be safe! Learning works fine if this is just a few hundred
+    independent_steps = 10*nneurons; % the number of Gibbs sampling steps to take between samples
+    minf_options = [];
+    minf_options.display = 'iter';  % set to 'none' to make this faster
+    minf_options.maxFunEvals = maxlinesearch;
+    minf_options.maxIter = maxlinesearch;
+        
+    run_checkgrad = 0; % set to 1 to check that the derivative being calculated in K_dK_ising.m 
+                       % is correct -- usually you will want this off, as it is mainly for debugging purposes.
+    if run_checkgrad
+        nsamples = 2; 
+        minf_options.DerivativeCheck = 'on';
+    end
+
+    % Perform cross validation
     for k = 1:nchunks
         fprintf(1,'\n.............Running cross validation iteration %d of 10..........\n',k);
         smat = span_inds(chunk_span_inds(k,:),:)';
@@ -129,27 +147,8 @@ function [all_J, all_logL, modelname] = ising_neurons_L1reg(datafile, model, nch
         X_train = X;
         X_train(:,cinds) = []; % training data
         
-        T = nneurons+nstims; % number of couplings to fit
-        nsamples = size(X_train,2); % number of training samples
-        maxlinesearch = 1000; % this number is excessive just to be safe! Learning works fine if this is just a few hundred
-        independent_steps = 10*nneurons; % the number of Gibbs sampling steps to take between samples
-
         description = sprintf('d=%d, %d samples, %d learning steps',T,nsamples,maxlinesearch);
         fprintf(1,'%s\n',description);
-
-        run_checkgrad = 0; % set to 1 to check that the derivative being calculated in K_dK_ising.m 
-                           % is correct -- usually you will want this off, as it is mainly for debugging purposes.
-
-        % options to pass to minFunc 3rd party code
-        minf_options = [];
-        minf_options.display = 'iter';  % set to 'none' to make this faster
-        minf_options.maxFunEvals = maxlinesearch;
-        minf_options.maxIter = maxlinesearch;
-        
-        if run_checkgrad
-            nsamples = 2;
-            minf_options.DerivativeCheck = 'on';
-        end
 
         % randomly initialize the parameter matrix we're going to try to learn
         % note that the bias units lie on the diagonal of J
