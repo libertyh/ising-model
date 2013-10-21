@@ -25,4 +25,4 @@ Spike channels: 16 channels from a 4 x 4 polytrode configuration.
         9  10  11  12
        13  14  15  16
 
-Bin size was set to 5 ms (bin_size = 0.05).
+Bin size was set to 5 ms (bin_size = 0.005).

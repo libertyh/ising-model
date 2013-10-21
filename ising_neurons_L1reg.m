@@ -82,7 +82,7 @@ function [all_J, all_logL, modelname] = ising_neurons_L1reg(datafile, model, nch
     % following names and contents: 
     %   spk:        an nneurons x t matrix (nneurons = number of neurons/electrode sites, t = number of time bins)
     %   stim:       an nstims x t matrix (nstims = number of stimulus features, t = number of time bins)
-    %   bin_size:   the size of each time bin in seconds (in our sample dataset, bin_size = 0.05 (5 ms))
+    %   bin_size:   the size of each time bin in seconds (in our sample dataset, bin_size = 0.005 (5 ms))
     mydata = load(datafile);
     nneurons = size(mydata.spk, 1); % number of neurons or electrode/recording sites
     nstims = size(mydata.stim, 1);  % number of stimuli or number of stimulus features
