@@ -63,6 +63,7 @@ Because the Ising model considers activity in isolated time-slices, the bin size
 The Ising Model does not consider time delays or interactions between spikes in different time bins, so to capture effects that have a delay, you must shift the timing of the stimulus matrix.  When you create the binary matrices for the stimulus, determine the average cross-correlation and find the average time that the cross-correlation exceeds the baseline before and after the cross-correlation peak (as in the figure below).  The start and end time of your stimulus should then match this average window (rather than the exact time that the stimulus was on).  This is especially important if you use smaller time bins.
 
 ![Average cross-correlation between stimulus and neural response](https://raw.github.com/libertyh/ising-model/master/images/sound_crosscorr.png "Optional title")
+
 Average cross-correlation between stimulus and neural response, showing that the response window is between 5-15ms.
 
 You could also capture interactions at different delays by adding rows to `stim` that are delayed versions of the stimulus matrix.  See the Supplemental Materials in Hamilton et al. 2013 for details.
@@ -81,7 +82,7 @@ This function takes the mat file (`sample_data.mat`) and runs the Ising model fi
 The outputs of `ising_neurons_L1reg` are the model name (in this case, "fully connected"), the log-likelihood of the data given the model (`logL`), and a 3D matrix of coupling values (`[s+n] x n x # of cross validation iterations`).
 
 ## Evaluating Ising Model performance
-Depending on how many electrode sites you record from and how much memory you have on your computer, you may be able to calculate the full log-likelihood of your data given the model, in which case you can directly compare log-likelihoods across models (this is what the code assumes, and calculates the log-likelihood directly with `L_dL_ising.m`).  With 16 sites, this is tractable (2<sup>16</sup> possible spike patterns must be calculated), but if you have something larger (e.g. a 128-channel array) it may not be possible to calculate the partition function.  In that case, you can compare models using likelihood ratios.
+Depending on how many electrode sites you record from and how much memory you have on your computer, you may be able to calculate the full log-likelihood of your data given the model, in which case you can directly compare log-likelihoods across models (this is what the code assumes, and calculates the log-likelihood directly with `L_dL_ising.m`).  With 16 sites, this is tractable (2<sup>16</sup> possible spike patterns must be calculated), but if you have something larger (e.g. a 128-channel array) it may not be possible to calculate the partition function.  In that case, you may want to use a technique such as annealed importance sampling to compute the log likelihood.
 
 ## Plotting the couplings
 The output from `ising_neurons_L1reg.m` can be plotted by itself to get an overall view of the couplings (use `imagesc(all_J(:,:,1),[-2 2])`), but inferring spatial patterns is difficult unless you are used to looking at these plots.  For example, running the code using `sample_data.mat`, you should get a coupling matrix similar to the one below.
@@ -106,6 +107,7 @@ A couple of things to check if you are having problems:
 - You have enough data/time points to fit the model
 - You have enough memory on your system
 - Your channels are named appropriately
+- If the number of sites is larger than approximately 20, that you have commented out the call to `L_dL_ising.m` (which takes a time proportional to 2<sup># sites</sup>).
 
 References
 ----------
