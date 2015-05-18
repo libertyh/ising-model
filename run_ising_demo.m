@@ -44,6 +44,7 @@
 % TO PROVIDE MAINTENANCE, SUPPORT, UPDATES, ENHANCEMENTS, OR MODIFICATIONS.
 %
 
+addpath('3rd_party_code/minFunc');
 datafile = 'sample_data.mat';
 model = 0;
 nchunks = 10; 
