@@ -122,7 +122,7 @@ function [all_J, all_logL, modelname] = ising_neurons_L1reg(datafile, model, nch
 
     % set options for minFunc function minimization
     T = nneurons+nstims; % number of couplings to fit
-    nsamples = size(X_train,2); % number of training samples
+    nsamples = size(X,2); % number of training samples
     maxlinesearch = 1000; % this number is excessive just to be safe! Learning works fine if this is just a few hundred
     independent_steps = 10*nneurons; % the number of Gibbs sampling steps to take between samples
     minf_options = [];
