@@ -17,7 +17,8 @@ function [K, dK] = K_dK_ising_L1reg( J, X, nneurons, nstims, lambda, zeronodes)
 %  References:
 %    Hamilton LS, Sohl-Dickstein J, Huth AG, Carels VM, Bao S (2013). Optogenetic
 %       Activation of an Inhibitory Network Enhances Functional Connectivity in
-%       Auditory Cortex.  Neuron (in press).
+%       Auditory Cortex.  Neuron. 2013 Nov 20;80(4):1066-76. 
+%       doi: 10.1016/j.neuron.2013.08.017.
 %    Sohl-Dickstein J, Battaglino P, DeWeese M (2011).  New method for parameter
 %       estimation in probabilistic models: minimum probability flow.  Physical
 %       Review Letters, 107:22 p220601.
