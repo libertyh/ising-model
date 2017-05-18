@@ -111,6 +111,6 @@ A couple of things to check if you are having problems:
 
 References
 ----------
-- Hamilton LS, Sohl-Dickstein J, Huth AG, Carels VM, Deisseroth K, Bao S (2013). Optogenetic Activation of an Inhibitory Network Enhances Feedforward Functional Connectivity in Auditory Cortex.  _Neuron_ (in press).
+- Hamilton LS, Sohl-Dickstein J, Huth AG, Carels VM, Deisseroth K, Bao S (2013). Optogenetic Activation of an Inhibitory Network Enhances Feedforward Functional Connectivity in Auditory Cortex.  _Neuron_ 80(4): 1066-76 https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3841078/
 - Sohl-Dickstein J, Battaglino PB, and DeWeese MR (2011). New method for parameter estimation in probabilistic models: minimum probability flow. _Physical Review Letters_ 107:22 p220601.
 - Schmidt M. minFunc: Unconstrained optimization of differentiable real-valued multivariate functions. Open source MATLAB software available at [http://www.di.ens.fr/~mschmidt/Software/minFunc.html](http://www.di.ens.fr/~mschmidt/Software/minFunc.html) (accessed September 2013).
